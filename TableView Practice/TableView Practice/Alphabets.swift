@@ -52,17 +52,17 @@ enum Alphabets: Int, CustomStringConvertible{
         case .latin:
             return "The Latin alphabet dates back to the first century BC, where it originated in Rome as a descendent of the ancient Phonecian and Greek alphabets. Leading up to the 1800s CE, English grammarians removed the original letters that had been added to their version of the script over time, excepting the letters U and W. This variant became accepted by the ISO as the Basic Latin Alphabet. It is used by over 70% of the world's population due to european colonization."
         case .cyrillic:
-            return "The Cyrillic alphabet was developed in Bulgaria in the 800s CE, strongly influenced by the Greek alphabet. It was adopted by Russian speakers during that time and use spread east across Asia with Russia.\nThe alphabet was even more widely adopted following the formation of the Soviet Union. Curently about 252 million people worldwide use this alphabet, including numerous non-slavic languages."
+            return "The Cyrillic alphabet was developed in Bulgaria in the 800s CE, strongly influenced by the Greek alphabet. It was adopted by Russian speakers during that time and use spread east across Asia with Russia. The alphabet was even more widely adopted following the formation of the Soviet Union. Curently about 252 million people worldwide use this alphabet, including numerous non-slavic languages."
         case .greek:
-            return "The modern Greek alphabet descended from a common ancestor with the Roman alphabet, which also influenced the development of Cyrillic. The curttent version of the Greek Alphabet was formalized in the early 8th century CE, but originated about a thousand years earlier. Only a few non-Greek languages use this alphabet besides the approximately 13 million Greek speakers worldwide."
+            return "The modern Greek alphabet descended from a common ancestor with the Roman alphabet, which also influenced the development of Cyrillic. The current version of the Greek Alphabet was formalized in the early 8th century CE, but originated about a thousand years earlier. Only a few non-Greek languages use this alphabet besides the approximately 13 million Greek speakers worldwide."
         case .armenian:
-            return "The Armenian script was developed around 460 CE and its current form dates to the middle ages.\n There are between 8-12 million speakers of Armenian currently."
+            return "The Armenian script was developed around 460 CE. Some reports from antiquity make reference to an Armenian alphabet at an earlier date, of which no examples survive. Aside from the addition of two letters in the middle ages, the Armenian Alphabet has survived intact for almost 1500 years with no changes in pronunciation.\nThere are between 8-12 million speakers of Armenian currently."
         case .georgian:
             return "The modern Georgian alphabet, called 'Mkhedruli', was introduced in the late 900s CE and became the lettering of choice for civic and business affairs. Two other scripts, 'Asomtavruli' and 'Nuskhuri' were also in use at the time but slowly were replaced by Mkhedruli. It is most commonly used in the 'Kartvelian' language family and usage outside this language group was supplanted by Cyrillic in the 19th and 20th century CE."
         case .korean:
-            return "The alphabet of the Korean language, called Hangul, originated in the 1400s CE as part of an effort to promote literacy among the pesantry.It supplanted Chinese characters and several other local phonetic script. The small size of Hangul characters is suited to Korean's unique orthography, where letters are positioned in a layered block of up to five characters causing a resemblance to a chinese pictograph. Despite this resemblance, the individual Hangul components comprise a true Alphabet."
+            return "The alphabet of the Korean language, called Hangul, originated in the 1400s CE as part of an effort to promote literacy among the pesantry. It supplanted Chinese characters and several other local phonetic scripts. The small size and simple shape of Hangul characters is suited to Korean's unique orthography, where letters are positioned in a layered block of up to five characters in order to resemble a Chinese pictograph. Nonetheless, the individual Hangul components comprise a true Alphabet."
         }
-    }
+    }//all information from wikipedia, retrieved 2-27-17
     
     
     static let allAlpha: [Alphabets] = [.latin, .cyrillic, .greek,.georgian,.armenian,.korean]

@@ -21,19 +21,19 @@ class AlphaDisplay: UIViewController, UICollectionViewDelegate, UICollectionView
         infoLabel.numberOfLines = 0
         if let myDelegate = delegate {
             myDelegate.hasBeenRead[alphabetToDisplay] = true
-            print (myDelegate.hasBeenRead)
-        }
-        print (alphabetToDisplay.letters.count)
+        } //informs ViewController that language info has been read
     }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return alphabetToDisplay.letters.count
     }
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! letterCell
         cell.letterLabel.textColor = UIColor.white
         cell.letterLabel.text = alphabetToDisplay.letters[indexPath.item]
         return cell
-    }
+    }//loads cells with letters ordinally and formats text
 }
 
 class letterCell: UICollectionViewCell {

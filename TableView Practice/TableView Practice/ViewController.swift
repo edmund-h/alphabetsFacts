@@ -16,8 +16,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     override func viewDidLoad() {
         super.viewDidLoad()
         Alphabets.allAlpha.forEach({hasBeenRead[$0] = false})
-        print (hasBeenRead)
-    }
+    }   //creates a dictionary to track which languages have been read. defaults to false
     
     override func viewWillAppear(_ animated: Bool) {
         table.reloadData()
@@ -25,7 +24,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -33,23 +31,26 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "AlphaCell", for: indexPath) as! AlphaCell
-        let myAlphabet = Alphabets.allAlpha[indexPath.row]
+        let myAlphabet = Alphabets.allAlpha[indexPath.row] //gets language by row
         let wasRead = hasBeenRead[myAlphabet] ?? false
+        
         cell.alphabetLabel.text = myAlphabet.description
         cell.alphabetButton.setTitle(myAlphabet.letters[3], for: .normal)
         cell.readLabel.isHidden = !wasRead
-        cell.alphabetButton.tag = indexPath.row
+        cell.alphabetButton.tag = indexPath.row //language stored ordinally in tag
+        
         return cell
-    }
+    }//cell should show language name and a sample character, plus a checkmark once read
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard segue.identifier == "SegueToAlphabet" else {return}
         let destination = segue.destination as! AlphaDisplay
         let origin = sender as! UIButton
-        destination.delegate = self
-        print(origin.tag)
+        destination.delegate = self     //self as delegate to receive info from AlphaView
         destination.alphabetToDisplay = Alphabets.allAlpha[origin.tag]
-    }
+    }   // passes language to display by order in which cell was created
 }
 
 class AlphaCell: UITableViewCell{
